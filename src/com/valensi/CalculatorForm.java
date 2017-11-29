@@ -88,8 +88,18 @@ public class CalculatorForm extends javax.swing.JFrame {
         });
 
         Button2.setText("2");
+        Button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button2ActionPerformed(evt);
+            }
+        });
 
         Button3.setText("3");
+        Button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button3ActionPerformed(evt);
+            }
+        });
 
         Button4.setText("4");
         Button4.addActionListener(new java.awt.event.ActionListener() {
@@ -106,12 +116,32 @@ public class CalculatorForm extends javax.swing.JFrame {
         });
 
         Button6.setText("6");
+        Button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button6ActionPerformed(evt);
+            }
+        });
 
         Button7.setText("7");
+        Button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button7ActionPerformed(evt);
+            }
+        });
 
         Button8.setText("8");
+        Button8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button8ActionPerformed(evt);
+            }
+        });
 
         Button9.setText("9");
+        Button9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button9ActionPerformed(evt);
+            }
+        });
 
         ButtonSamaDengan.setText("=");
 
@@ -242,30 +272,63 @@ public class CalculatorForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
-
+        getOperand(Button5);
         // TODO add your handling code here:
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+getOperand(jButton2);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
-        // TODO add your handling code here:
+getOperand(Button1);        
+// TODO add your handling code here:
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
+      getOperand(Button4);
         // TODO add your handling code here:
     }//GEN-LAST:event_Button4ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       getOperand(jButton4);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void ButtonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTambahActionPerformed
-
+      //  getOperator();)
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonTambahActionPerformed
+
+    private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
+
+getOperand(Button2);        // TODO add your handling code here:
+    }//GEN-LAST:event_Button2ActionPerformed
+
+    private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
+getOperand(Button3);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button3ActionPerformed
+
+    private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
+getOperand(Button6);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button6ActionPerformed
+
+    private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
+getOperand(Button7);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button7ActionPerformed
+
+    private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
+getOperand(Button8);        // TODO add your handling code here:
+    }//GEN-LAST:event_Button8ActionPerformed
+
+    private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
+getOperand(Button9);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button9ActionPerformed
 
     /**
      * @param args the command line arguments
