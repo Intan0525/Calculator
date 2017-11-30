@@ -16,34 +16,33 @@ public class CalculatorForm extends javax.swing.JFrame {
 
     hitung model = new hitung();
 
-    private String operand = "";
+    String operand = "";
 
     public CalculatorForm() {
         initComponents();
     }
 
-    
-    public void  getOperand(javax.swing.JButton button) {
-    operand+=button.getText();
-    model.setOperand(operand);
-    layarTextField.setText(operand);
+    public void getOperand(javax.swing.JButton button) {
+        operand += button.getText();
+        model.setOperand(operand);
+        layarTextField.setText(operand);
 //        return operand;
     }
 
-    public void getOperator (int opt){
+    public void getOperator(int opt) {
         model.setOperator(opt);
-        operand ="";
-                
+        operand = "";
+
     }
-    
-    private void process (){
-        DecimalFormat df = new DecimalFormat("#,###.###.###");
+
+    private void process() {
+        DecimalFormat df = new DecimalFormat("#,###.########");
         model.process();
         operand = "";
         layarTextField.setText(df.format(model.getResult()));
-        
+
     }
-    
+
     public void setOperand(String operand) {
         this.operand = operand;
     }
@@ -67,12 +66,12 @@ public class CalculatorForm extends javax.swing.JFrame {
         ButtonTambah = new javax.swing.JButton();
         ButtonKurang = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        komaButton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -144,6 +143,11 @@ public class CalculatorForm extends javax.swing.JFrame {
         });
 
         ButtonSamaDengan.setText("=");
+        ButtonSamaDengan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSamaDenganActionPerformed(evt);
+            }
+        });
 
         ButtonTambah.setText("+");
         ButtonTambah.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +157,11 @@ public class CalculatorForm extends javax.swing.JFrame {
         });
 
         ButtonKurang.setText("-");
+        ButtonKurang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonKurangActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("0");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +170,12 @@ public class CalculatorForm extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("C");
+        clearButton.setText("C");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("CE");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -171,12 +185,27 @@ public class CalculatorForm extends javax.swing.JFrame {
         });
 
         jButton5.setText("/");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("x");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("+ -");
 
-        jButton8.setText(".");
+        komaButton.setText(".");
+        komaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                komaButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,12 +245,12 @@ public class CalculatorForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
-                                .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(komaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(Button8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
@@ -262,8 +291,8 @@ public class CalculatorForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(komaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(150, 150, 150))
         );
 
@@ -277,58 +306,91 @@ public class CalculatorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-getOperand(jButton2);
+        getOperand(jButton2);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
-getOperand(Button1);        
+        getOperand(Button1);
 // TODO add your handling code here:
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
-      getOperand(Button4);
+        getOperand(Button4);
         // TODO add your handling code here:
     }//GEN-LAST:event_Button4ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       getOperand(jButton4);
+        getOperand(jButton4);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void ButtonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTambahActionPerformed
-      //  getOperator();)
+          getOperator(1);
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonTambahActionPerformed
 
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
 
-getOperand(Button2);        // TODO add your handling code here:
+        getOperand(Button2);        // TODO add your handling code here:
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
-getOperand(Button3);
+        getOperand(Button3);
         // TODO add your handling code here:
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
-getOperand(Button6);
+        getOperand(Button6);
         // TODO add your handling code here:
     }//GEN-LAST:event_Button6ActionPerformed
 
     private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
-getOperand(Button7);
+        getOperand(Button7);
         // TODO add your handling code here:
     }//GEN-LAST:event_Button7ActionPerformed
 
     private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
-getOperand(Button8);        // TODO add your handling code here:
+        getOperand(Button8);        // TODO add your handling code here:
     }//GEN-LAST:event_Button8ActionPerformed
 
     private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
-getOperand(Button9);
+        getOperand(Button9);
         // TODO add your handling code here:
     }//GEN-LAST:event_Button9ActionPerformed
+
+    private void ButtonKurangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonKurangActionPerformed
+        // TODO add your handling code here:
+        getOperator(2);
+    }//GEN-LAST:event_ButtonKurangActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        getOperator(3);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        getOperator(4);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void ButtonSamaDenganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSamaDenganActionPerformed
+        // TODO add your handling code here:
+        process();
+    }//GEN-LAST:event_ButtonSamaDenganActionPerformed
+
+    private void komaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_komaButtonActionPerformed
+        // TODO add your handling code here:
+        getOperand(komaButton);
+    }//GEN-LAST:event_komaButtonActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        // TODO add your handling code here:
+        operand="";
+        model.setOperator(0);
+        model.setResult(0);
+        layarTextField.setText("0");
+    }//GEN-LAST:event_clearButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,14 +440,14 @@ getOperand(Button9);
     private javax.swing.JButton ButtonKurang;
     private javax.swing.JButton ButtonSamaDengan;
     private javax.swing.JButton ButtonTambah;
+    private javax.swing.JButton clearButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton komaButton;
     private javax.swing.JTextField layarTextField;
     // End of variables declaration//GEN-END:variables
 }
